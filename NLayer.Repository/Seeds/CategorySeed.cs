@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayer.Repository.Configurations
+namespace NLayer.Repository.Seeds
 {
-    internal class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    internal class CategorySeed : IEntityTypeConfiguration<Category>
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).UseIdentityColumn();
-            builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
-
+            builder.HasData(
+                new Category { Id = 1, Name = "Kalemler" },
+                new Category { Id = 2, Name = "Kitaplar" },
+                new Category { Id = 3, Name = "Defterler" });
         }
     }
 }

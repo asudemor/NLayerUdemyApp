@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace NLayer.Core
 {
-    public class ProductFeature:BaseEntity
+    public class Category:BaseEntity
     {
-        public string? Name{ get; set; }
-        public ICollection<Product>? Products { get; set; }
+        public string Name{ get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }
